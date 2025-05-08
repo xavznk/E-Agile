@@ -1,0 +1,36 @@
+.partners {
+  background-color: #f9f9f9;
+  padding: 2rem 5%;
+  text-align: center;
+}
+
+.partners h2 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo {
+  font-weight: bold;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .partners-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+}

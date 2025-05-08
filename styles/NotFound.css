@@ -1,0 +1,74 @@
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.not-found-container {
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-container h1 {
+  font-size: 6rem;
+  color: #f39c12;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.not-found-container p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.not-found-button:hover {
+  background-color: #e67e22;
+}
+
+.not-found-button.secondary {
+  background-color: transparent;
+  border: 1px solid #f39c12;
+  color: #f39c12;
+}
+
+.not-found-button.secondary:hover {
+  background-color: #f9f9f9;
+}
+
+.not-found-image {
+  margin-top: 2rem;
+}
+
+.not-found-image img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #f39c12;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.navigation a {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #f39c12;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.connexion {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.inscription {
+  padding: 0.5rem 1rem;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.connexion:hover {
+  border-color: #f39c12;
+}
+
+.inscription:hover {
+  background-color: #e67e22;
+}

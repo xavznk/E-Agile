@@ -1,0 +1,33 @@
+.course-detail-page {
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.search-container {
+  background-color: #fff;
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  color: #666;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 1rem;
+}
