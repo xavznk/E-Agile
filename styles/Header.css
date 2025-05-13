@@ -5,6 +5,8 @@
   padding: 1rem 5%;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
 }
 
 .logo a {
@@ -16,6 +18,9 @@
 .navigation ul {
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navigation a {
@@ -55,4 +60,72 @@
 
 .inscription:hover {
   background-color: #e67e22;
+}
+
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem 3%;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+  }
+
+  .navigation.active {
+    display: block;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    padding: 1rem 5%;
+  }
+
+  .navigation ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navigation ul li:last-child {
+    border-bottom: none;
+  }
+
+  .auth-buttons {
+    display: none;
+    width: 100%;
+    padding: 0 5% 1rem;
+    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .auth-buttons.active {
+    display: flex;
+  }
 }

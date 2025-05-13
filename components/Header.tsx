@@ -1,31 +1,76 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
 import "../styles/Header.css"
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Vérifier si l'écran est mobile au chargement et lors du redimensionnement
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    // Vérifier au chargement
+    checkIfMobile()
+
+    // Ajouter un écouteur d'événement pour le redimensionnement
+    window.addEventListener("resize", checkIfMobile)
+
+    // Nettoyer l'écouteur d'événement
+    return () => window.removeEventListener("resize", checkIfMobile)
+  }, [])
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const closeMenu = () => {
+    if (isMobile) {
+      setMenuOpen(false)
+    }
+  }
+
   return (
     <header className="header">
       <div className="logo">
-        <a href="/">E-AGILE</a>
+        <Link href="/">E-AGILE</Link>
       </div>
-      <nav className="navigation">
+
+      <button className="mobile-menu-button" onClick={toggleMenu} aria-label="Menu">
+        <span className="menu-icon">{menuOpen ? "✕" : "☰"}</span>
+      </button>
+
+      <nav className={`navigation ${menuOpen ? "active" : ""}`}>
         <ul>
           <li>
-            <a href="/">Accueil</a>
+            <Link href="/" onClick={closeMenu}>
+              Accueil
+            </Link>
           </li>
           <li>
-            <a href="/cours">Cours</a>
+            <Link href="/cours" onClick={closeMenu}>
+              Cours
+            </Link>
           </li>
           <li>
-            <a href="#a-propos-de-nous">À propos de nous</a>
+            <Link href="/a-propos-de-nous" onClick={closeMenu}>
+              À propos de nous
+            </Link>
           </li>
         </ul>
       </nav>
-      <div className="auth-buttons">
-        <a href="/connexion" className="connexion">
+
+      <div className={`auth-buttons ${menuOpen ? "active" : ""}`}>
+        <Link href="/connexion" className="connexion" onClick={closeMenu}>
           Connexion
-        </a>
-        <a href="/inscription" className="inscription">
+        </Link>
+        <Link href="/inscription" className="inscription" onClick={closeMenu}>
           S'inscrire
-        </a>
+        </Link>
       </div>
     </header>
   )

@@ -3,9 +3,18 @@
 import { useState } from "react"
 import "../styles/CourseDetail.css"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const CourseDetail = ({ course }) => {
   const [activeTab, setActiveTab] = useState("cours")
+  const router = useRouter()
+
+  // Fonction pour vérifier si une leçon existe
+  const handleLessonClick = (e, lessonUrl) => {
+    // Si la leçon n'existe pas, on redirige vers la page 404
+    // Cette fonction est un placeholder - Next.js gère automatiquement la redirection vers la page 404
+    // pour les routes qui n'existent pas, donc nous n'avons pas besoin d'implémenter cette logique ici
+  }
 
   return (
     <div className="course-detail-container">
@@ -41,16 +50,112 @@ const CourseDetail = ({ course }) => {
         {activeTab === "cours" && (
           <div className="course-modules">
             {course.modules.map((module) => {
-              // Construire le slug de la leçon en fonction du titre du module
-              const moduleSlug = module.title
-                .toLowerCase()
-                .replace(/[^\w\s]/gi, "")
-                .replace(/\s+/g, "-")
+              // Créer un slug standardisé pour chaque module
+              let moduleSlug
+
+              // Mapper les titres aux slugs exacts des pages existantes
+              if (course.slug === "introduction-aux-methodes-agiles") {
+                switch (module.id) {
+                  case 1:
+                    moduleSlug = "origines-et-principes"
+                    break
+                  case 2:
+                    moduleSlug = "manifeste-agile"
+                    break
+                  case 3:
+                    moduleSlug = "pourquoi-adopter-agilite"
+                    break
+                  case 4:
+                    moduleSlug = "panorama-methodes-agiles"
+                    break
+                  case 5:
+                    moduleSlug = "scrum"
+                    break
+                  case 6:
+                    moduleSlug = "cycle-de-vie"
+                    break
+                  case 7:
+                    moduleSlug = "comparaison-methodes"
+                    break
+                  case 8:
+                    moduleSlug = "travail-en-equipe"
+                    break
+                  case 9:
+                    moduleSlug = "kanban"
+                    break
+                  default:
+                    // Fallback au cas où
+                    moduleSlug = module.title
+                      .toLowerCase()
+                      .normalize("NFD")
+                      .replace(/[\u0300-\u036f]/g, "")
+                      .replace(/[^\w\s-]/g, "")
+                      .replace(/\s+/g, "-")
+                }
+              } else if (course.slug === "cadre-scrum-et-kanban") {
+                switch (module.id) {
+                  case 1:
+                    moduleSlug = "introduction-scrum-kanban"
+                    break
+                  case 2:
+                    moduleSlug = "roles-scrum"
+                    break
+                  default:
+                    moduleSlug = module.title
+                      .toLowerCase()
+                      .normalize("NFD")
+                      .replace(/[\u0300-\u036f]/g, "")
+                      .replace(/[^\w\s-]/g, "")
+                      .replace(/\s+/g, "-")
+                }
+              } else if (course.slug === "guide-rapide-pour-la-gestion") {
+                switch (module.id) {
+                  case 1:
+                    moduleSlug = "fondamentaux-gestion-projet"
+                    break
+                  case 2:
+                    moduleSlug = "gestion-equipes-agiles"
+                    break
+                  default:
+                    moduleSlug = module.title
+                      .toLowerCase()
+                      .normalize("NFD")
+                      .replace(/[\u0300-\u036f]/g, "")
+                      .replace(/[^\w\s-]/g, "")
+                      .replace(/\s+/g, "-")
+                }
+              } else if (course.slug === "techniques-de-planification") {
+                switch (module.id) {
+                  case 1:
+                    moduleSlug = "fondamentaux-planification-agile"
+                    break
+                  default:
+                    moduleSlug = module.title
+                      .toLowerCase()
+                      .normalize("NFD")
+                      .replace(/[\u0300-\u036f]/g, "")
+                      .replace(/[^\w\s-]/g, "")
+                      .replace(/\s+/g, "-")
+                }
+              } else {
+                // Pour les autres cours, utiliser la méthode de génération de slug standard
+                moduleSlug = module.title
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "")
+                  .replace(/[^\w\s-]/g, "")
+                  .replace(/\s+/g, "-")
+              }
 
               const lessonUrl = `/cours/${course.slug}/${moduleSlug}`
 
               return (
-                <Link key={module.id} href={lessonUrl} className="course-module">
+                <Link
+                  key={module.id}
+                  href={lessonUrl}
+                  className="course-module"
+                  onClick={(e) => handleLessonClick(e, lessonUrl)}
+                >
                   <span className="module-number">{module.id}</span>
                   <div className="module-info">
                     <span className="module-title">{module.title}</span>
@@ -80,7 +185,7 @@ const CourseDetail = ({ course }) => {
         <h3>Instructeur</h3>
         <div className="instructor-info">
           <div className="instructor-avatar">
-            <img src="/placeholder.svg?height=50&width=50" alt="Avatar de l'instructeur" />
+            <img src="/images/instructor-avatar.png" alt="Avatar de l'instructeur" />
           </div>
           <div className="instructor-name">{course.instructor}</div>
         </div>

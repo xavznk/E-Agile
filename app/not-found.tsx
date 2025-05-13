@@ -21,7 +21,7 @@ export default function NotFound() {
             </Link>
           </div>
           <div className="not-found-image">
-            <img src="/placeholder.svg?height=200&width=300" alt="Illustration page non trouvée" />
+            <img src="/images/not-found.png" alt="Illustration page non trouvée" />
           </div>
         </div>
       </main>
