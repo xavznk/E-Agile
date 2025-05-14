@@ -1,6 +1,7 @@
 import SignupForm from "@/components/SignupForm"
 import Header from "@/components/Header"
 import "@/styles/Auth.css"
+import Footer from "@/components/Footer"
 
 export default function SignupPage() {
   return (
@@ -20,6 +21,7 @@ export default function SignupPage() {
         </div>
       </div>
     </div>
+    <Footer />
   </div>
   )
 }

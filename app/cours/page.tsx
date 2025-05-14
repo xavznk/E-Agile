@@ -24,7 +24,7 @@ export default function CoursesPage() {
           <CoursesList />
 
           <div className="bottom-illustration">
-            <img src="/placeholder.svg?height=200&width=400" alt="Illustration d'une personne se reposant" />
+            <img src="/10088.jpg" alt="Illustration d'une personne se reposant" />
           </div>
         </div>
       </main>

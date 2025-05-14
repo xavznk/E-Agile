@@ -61,6 +61,11 @@ const Header = () => {
               À propos de nous
             </Link>
           </li>
+          <li>
+            <Link href="/contact" onClick={closeMenu}>
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
 

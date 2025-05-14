@@ -185,7 +185,7 @@ const CourseDetail = ({ course }) => {
         <h3>Instructeur</h3>
         <div className="instructor-info">
           <div className="instructor-avatar">
-            <img src="/images/instructor-avatar.png" alt="Avatar de l'instructeur" />
+            <img src="/9955.jpg" alt="Avatar de l'instructeur" />
           </div>
           <div className="instructor-name">{course.instructor}</div>
         </div>

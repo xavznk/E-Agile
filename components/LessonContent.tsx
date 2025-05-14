@@ -6,7 +6,7 @@ const LessonContent = ({ lesson }) => {
     <div className="lesson-container">
       <div className="lesson-instructor">
         <span className="instructor-avatar">
-          <img src="/images/instructor-avatar.png" alt="Avatar de l'instructeur" />
+          <img src="/9955.jpg" alt="Avatar de l'instructeur" />
         </span>
         <span className="instructor-name">Instructeur : {lesson.instructor}</span>
       </div>

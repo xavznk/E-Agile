@@ -1,6 +1,7 @@
 import LoginForm from "@/components/LoginForm"
 import Header from "@/components/Header"
 import "@/styles/Auth.css"
+import Footer from "@/components/Footer"
 
 export default function LoginPage() {
   return (
@@ -20,6 +21,7 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+    <Footer />
   </div>
   )
 }

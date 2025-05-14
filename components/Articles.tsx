@@ -1,10 +1,10 @@
 import "../styles/Articles.css"
 
-const ArticleCard = ({ title, excerpt }) => {
+const ArticleCard = ({ title, excerpt, imageUrl }) => {
   return (
     <div className="article-card">
       <div className="article-image">
-        <img src="/placeholder.svg?height=150&width=200" alt={title} />
+        <img src={imageUrl} alt={title} height="150" width="200" />
       </div>
       <div className="article-content">
         <h3>{title}</h3>
@@ -20,16 +20,18 @@ const ArticleCard = ({ title, excerpt }) => {
 const Articles = () => {
   return (
     <section className="articles">
-      <h2>Articles</h2>
-      <div className="recent-label">Nos récents blogs</div>
+      <h2>Articles sur la Méthode Agile</h2>
+      <div className="recent-label">Nos récents articles Agile</div>
       <div className="articles-container">
         <ArticleCard
-          title="Titre"
-          excerpt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title="Les principes fondamentaux de l'Agile"
+          excerpt="Découvrez les 12 principes du manifeste Agile et comment ils transforment la gestion de projet..."
+          imageUrl="/68747.jpg"
         />
         <ArticleCard
-          title="Titre"
-          excerpt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title="Scrum vs Kanban: Quelle méthode choisir?"
+          excerpt="Comparaison détaillée entre Scrum et Kanban, deux frameworks Agile populaires..."
+          imageUrl="/4878033.jpg"
         />
       </div>
     </section>

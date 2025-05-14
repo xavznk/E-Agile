@@ -5,7 +5,7 @@ import "@/styles/CourseDetailPage.css"
 
 export default function CourseDetailPage() {
   const courseData = {
-    title: "Introduction aux méthodes agiles",
+    title: "Chapitre 1 : Introduction aux méthodes agiles",
     subtitle: "Commencez ici, si vous n'avez aucune expérience en gestion de projet/agile.",
     duration: "5 heures",
     instructor: "M. Fotsing Eric",

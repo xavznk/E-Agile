@@ -1,6 +1,6 @@
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import "@/styles/AboutUs.css"
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import "@/styles/AboutUs.css";
 
 export default function AboutUs() {
   const teamMembers = [
@@ -8,152 +8,134 @@ export default function AboutUs() {
       name: "Mr FOTSING ERIC",
       role: "Consultant en méthode agile",
       special: true,
+      initials: "FE"
     },
     {
       name: "Minkada samuel",
       role: "Développeur fullstack",
+      initials: "MS"
     },
     {
       name: "Georges Mbella",
       role: "Développeur fullstack",
+      initials: "GM"
     },
     {
-      name: "xavier nkamgang",
+      name: "Nkapnang Xavier",
       role: "Développeur fullstack",
+      initials: "NX"
     },
     {
       name: "NGONO joseph",
       role: "Développeur fullstack",
+      initials: "NJ"
     },
     {
       name: "Amply kenfack",
       role: "Développeur fullstack",
+      initials: "AK"
     },
     {
       name: "Yonta jonathan",
       role: "Développeur fullstack",
+      initials: "YJ"
     },
-  ]
+  ];
+
+  const values = [
+    {
+      title: "Collaboration",
+      icon: "👥"
+    },
+    {
+      title: "Flexibilité",
+      icon: "🔄"
+    },
+    {
+      title: "Innovation",
+      icon: "💡"
+    }
+  ];
 
   return (
     <div className="app">
       <Header />
       <main className="about-us-page">
+        {/* Header Section */}
         <div className="about-us-header">
           <h1>À PROPOS DE NOUS</h1>
         </div>
 
+        {/* Mission Section */}
         <section className="mission-section">
           <h2>NOTRE MISSION</h2>
           <div className="mission-content">
             <p>
-              Lorem ipsum dolor sit amet consectetur. At pellentesque et et turpis egestas imperdiet amet. Amet pretium
-              nisi blandit nunc blandit nunc nunc. Fermentum facilisis placerat pulvinar. Nec condimentum tempus diam
-              nulla nunc et in non vestibulum. Egestas id tempor dapibus vel. Vivamus quam suspendisse risus amet et
-              cursus porttitor turpis sed. Maecenas non et amet nunc nunc nulla facilisi.
+              Notre mission est de fournir des solutions technologiques innovantes qui transforment 
+              la façon dont nos clients font des affaires. Nous combinons expertise technique et 
+              approche agile pour offrir des résultats exceptionnels.
             </p>
             <p>
-              Egestas id tempor dapibus vel. Vivamus quam suspendisse risus amet et cursus porttitor turpis sed.
-              Maecenas non et amet nunc nunc nulla facilisi. Consectetur sagittis vitae. Mauris leo nunc blandit
-              ultrices urna eget. Imperdiet nunc sociis sed nec sed sed et ultrices nunc et. Interdum purus turpis
-              quisque in neque posuere velit. Ultrices ultricies auctor sed erat sollicitudin vulputate amet. Ac sed
-              adipiscing amet amet sapien amet volutpat vestibulum porttitor. Mauris in non cursus.
+              Chez utilisJack, nous croyons en la puissance de la collaboration et de l'innovation 
+              continue. Notre équipe travaille sans relâche pour créer des produits qui répondent 
+              parfaitement aux besoins de nos utilisateurs.
             </p>
             <p>
-              Pulvinar quam nulla fermentum sed massa nunc massa blandit. Sagittis aliquet faucibus felis ullamcorper
-              sed et erat vitae. Etiam nunc sit dictum amet amet feugiat adipiscing.
+              Nous nous engageons à fournir un travail de qualité, des solutions évolutives et 
+              une expérience client inégalée dans le domaine du développement logiciel.
             </p>
           </div>
         </section>
 
+        {/* Values Section */}
         <section className="values-section">
           <h2>NOS VALEURS</h2>
           <div className="values-container">
-            <div className="value-item">
-              <div className="value-circle"></div>
-              <h3>Collaboration</h3>
-            </div>
-            <div className="value-item">
-              <div className="value-circle"></div>
-              <h3>Flexibilité</h3>
-            </div>
-            <div className="value-item">
-              <div className="value-circle"></div>
-              <h3>Innovation</h3>
-            </div>
+            {values.map((value, index) => (
+              <div key={index} className="value-item">
+                <div className="value-circle">{value.icon}</div>
+                <h3>{value.title}</h3>
+              </div>
+            ))}
           </div>
         </section>
 
+        {/* Team Section */}
         <section className="team-section">
-          <h2>ÉQUIPES</h2>
+          <h2>NOTRE ÉQUIPE</h2>
           <div className="team-container">
-            <div className="special-member-row">
-              <div className="team-member special-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>Mr FOTSING ERIC</h3>
-                  <p>Consultant en méthode agile</p>
+            {/* Special Member */}
+            {teamMembers.filter(member => member.special).map((member, index) => (
+              <div key={index} className="special-member-card">
+                <div className="special-member-content">
+                  <div className="special-member-avatar">{member.initials}</div>
+                  <div className="special-member-details">
+                    <h3>{member.name}</h3>
+                    <p>{member.role}</p>
+                  </div>
                 </div>
-                <div className="member-illustration">
-                  <img src="/images/consultant-illustration.png" alt="Consultant en méthode agile" />
+                <div className="special-member-illustration">
+                  <img src="/9955.jpg" alt="Consultant agile" />
                 </div>
               </div>
-            </div>
+            ))}
 
-            <div className="team-row">
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>Minkada samuel</h3>
-                  <p>Développeur fullstack</p>
+            {/* Team Grid */}
+            <div className="team-grid">
+              {teamMembers.filter(member => !member.special).map((member, index) => (
+                <div key={index} className="team-card">
+                  <div className="member-avatar">{member.initials}</div>
+                  <div className="member-details">
+                    <h3>{member.name}</h3>
+                    <p>{member.role}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>Georges Mbella</h3>
-                  <p>Développeur fullstack</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="team-row">
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>xavier nkamgang</h3>
-                  <p>Développeur fullstack</p>
-                </div>
-              </div>
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>NGONO joseph</h3>
-                  <p>Développeur fullstack</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="team-row">
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>Amply kenfack</h3>
-                  <p>Développeur fullstack</p>
-                </div>
-              </div>
-              <div className="team-member">
-                <div className="member-square"></div>
-                <div className="member-info">
-                  <h3>Yonta jonathan</h3>
-                  <p>Développeur fullstack</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
       </main>
       <Footer />
     </div>
-  )
+  );
 }

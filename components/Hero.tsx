@@ -13,7 +13,7 @@ const Hero = () => {
       </div>
       <div className="hero-image">
         <img
-          src="/placeholder.svg?height=400&width=400"
+          src="/7566.jpg"
           alt="Illustration d'une personne travaillant sur un ordinateur portable"
         />
       </div>

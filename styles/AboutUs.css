@@ -1,12 +1,15 @@
+/* Main Page Styles */
 .about-us-page {
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Header Section */
 .about-us-header {
   background-color: #ffd8b4;
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
   text-align: center;
@@ -14,16 +17,18 @@
 }
 
 .about-us-header h1 {
-  color: #f39c12;
+  color: #e67e22;
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
+/* Common Section Styles */
 .mission-section,
 .values-section,
 .team-section {
-  margin-bottom: 4rem;
-  padding: 0;
+  margin-bottom: 5rem;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,31 +37,47 @@
 .mission-section h2,
 .values-section h2,
 .team-section h2 {
-  color: #f39c12;
+  color: #e67e22;
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  position: relative;
 }
 
+.mission-section h2::after,
+.values-section h2::after,
+.team-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #f39c12;
+  margin: 1rem auto 0;
+}
+
+/* Mission Section */
 .mission-content {
   width: 90%;
-  max-width: 1000px;
+  max-width: 900px;
+  line-height: 1.8;
 }
 
 .mission-section p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  color: #333;
+  margin-bottom: 1.8rem;
+  color: #555;
   text-align: justify;
+  font-size: 1.1rem;
 }
 
+/* Values Section */
 .values-container {
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
   margin-top: 2rem;
   width: 90%;
-  max-width: 800px;
+  max-width: 1000px;
+  flex-wrap: wrap;
 }
 
 .value-item {
@@ -64,111 +85,211 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  min-width: 200px;
 }
 
 .value-circle {
-  width: 80px;
-  height: 80px;
-  background-color: #e0e0e0;
+  width: 100px;
+  height: 100px;
+  background-color: #ffe0b2;
   border-radius: 50%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e67e22;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .value-item h3 {
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Team Section */
+.team-section {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
 }
 
 .team-container {
-  width: 90%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.special-member-row {
   width: 100%;
-  margin-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.team-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 2rem;
-}
-
-.team-member {
+/* Special Member Card */
+.special-member-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  margin-bottom: 3rem;
   position: relative;
+  overflow: hidden;
 }
 
-.special-member {
-  width: 100%;
-  padding-right: 150px;
+.special-member-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
 }
 
-.member-square {
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
-  background-color: #e0e0e0;
-  margin-right: 1rem;
+.special-member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ffecb3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e67e22;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-.member-info {
-  flex: 1;
-}
-
-.member-illustration {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  width: 150px;
-}
-
-.member-illustration img {
-  max-width: 100%;
-  height: auto;
-}
-
-.team-member h3 {
-  margin: 0 0 0.2rem 0;
-  font-size: 1rem;
+.special-member-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
 
-.team-member p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
+.special-member-details p {
+  color: #e67e22;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.special-member-illustration {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.team-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ffe4c4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.member-details h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  color: #444;
+}
+
+.member-details p {
+  color: #777;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .values-container {
+    gap: 3rem;
+  }
+  
+  .special-member-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .special-member-content {
+    flex-direction: column;
+  }
+  
+  .special-member-illustration {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .about-us-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .mission-section h2,
+  .values-section h2,
+  .team-section h2 {
+    font-size: 1.8rem;
+  }
+  
   .values-container {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
-
-  .team-row {
-    flex-direction: column;
-    gap: 1rem;
+  
+  .value-item {
+    min-width: 100%;
   }
-
-  .special-member {
-    padding-right: 0;
-    padding-bottom: 120px;
+  
+  .team-grid {
+    grid-template-columns: 1fr;
   }
+}
 
-  .member-illustration {
-    right: auto;
-    top: auto;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+@media (max-width: 480px) {
+  .about-us-header {
+    padding: 2rem 1rem;
+  }
+  
+  .mission-content,
+  .values-container {
+    width: 95%;
+  }
+  
+  .special-member-avatar,
+  .member-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
   }
 }
