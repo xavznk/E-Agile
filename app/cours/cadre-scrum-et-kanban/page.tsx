@@ -37,7 +37,7 @@ export default function CourseDetailPage() {
       },
       {
         id: 5,
-        title: "Kanban : principes et pratiques",
+        title: "principes et pratiques",
         description: "Découvrez les principes fondamentaux de Kanban et comment visualiser le flux de travail.",
         duration: "45 minutes",
       },

@@ -11,7 +11,7 @@ export default function SignupPage() {
       <div className="auth-container">
         <div className="auth-image">
           <img
-            src="/placeholder.svg?height=400&width=400"
+            src="/11388703.jpg"
             alt="Illustration de course"
             className="signup-illustration"
           />

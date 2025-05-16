@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div className="auth-container">
         <div className="auth-image">
           <img
-            src="/placeholder.svg?height=400&width=400"
+            src="/5185715.jpg"
             alt="Illustration de méditation"
             className="login-illustration"
           />

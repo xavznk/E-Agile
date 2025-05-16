@@ -99,7 +99,7 @@ const CourseDetail = ({ course }) => {
                     break
                   case 2:
                     moduleSlug = "roles-scrum"
-                    break
+                    breakz
                   default:
                     moduleSlug = module.title
                       .toLowerCase()
